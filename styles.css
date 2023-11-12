@@ -1,56 +1,151 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 :root {
   --background_img: url(./images/ana-markovych-uWNxBHCCQs4-unsplash.jpg);
+  --background_clr_prm: #0C100F;
+  --background_clr_scnd: #141817;
+  --label_font_clr: #575656;
+  --button_clr: #BF532C;
+  --invalid_clr: red;
+  --valid_clr: green;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 .container {
   display: flex;
 }
 
-.side-view{
+.side-view {
   height: 100vh;
   width: 40vw;
   background-image: var(--background_img);
@@ -64,7 +159,6 @@ table {
 .main-container {
   height: 100vh;
   width: 60vw;
-  background-color: pink;
 }
 
 img[alt*="logo"] {
@@ -79,25 +173,113 @@ img[alt*="logo"] {
   align-items: center;
   margin-top: auto;
   margin-bottom: auto;
+  user-select: none;
 }
 
-.logo > h1 {
+.logo>h1 {
   margin-top: 3px;
   margin-left: 10px;
 }
 
 .image-credit {
   align-self: center;
+  padding-bottom: 10px;
+  opacity: 50%;
+}
+
+.image-credit a {
+  color: white;
+}
+
+.image-credit:hover {
+  opacity: 100%;
 }
 
 .signup-text-container {
-  height: 35vh;
+  height: 30vh;
+  background-color: var(--background_clr_prm);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .form-container {
-  height: 30vh;
+  height: 40vh;
+  background-color: var(--background_clr_scnd);
 }
 
 .confirm {
-  height: 35vh;
+  height: 30vh;
+  background-color: var(--background_clr_prm);
+}
+
+h2 {
+  font-size: 1.6rem;
+  width: 45rem;
+  margin: 30px 50px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+label {
+  text-transform: uppercase;
+  color: var(--label_font_clr);
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+input {
+  border: var(--label_font_clr) solid 1px;
+  padding: 8px 2px;
+  border-radius: 4px;
+}
+
+input:invalid {
+  border: var(--invalid_clr) solid 1px;
+}
+
+input:valid {
+  border: var(--valid_clr) solid 1px;
+}
+
+.form-container>h3 {
+  font-size: 1.4rem;
+  padding: 20px;
+  padding-left: 50px;
+  font-weight: 1000;
+}
+
+.confirm>button {
+  padding: 12px 40px;
+  font-size: 1rem;
+  background-color: var(--button_clr);
+  border: none;
+  border-radius: 5px;
+  margin: 20px;
+  margin-left: 50px;
+}
+
+.confirm>p {
+  margin: 20px;
+  margin-left: 50px;
+}
+
+.confirm>p>a {
+  text-decoration: none;
+  font-weight: 900;
+  color: var(--button_clr);
 }
