@@ -283,3 +283,8 @@ input:valid {
   font-weight: 900;
   color: var(--button_clr);
 }
+
+.error-message {
+  font-size: 0.8rem;
+  color: var(--invalid_clr);
+}
